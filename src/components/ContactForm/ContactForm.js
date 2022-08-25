@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import PropTypes from 'prop-types';
 import s from './ContactForm.module.css';
 
 const ContactForm = ({ catchSubmitInfo }) => {
@@ -11,13 +11,12 @@ const ContactForm = ({ catchSubmitInfo }) => {
     adult: false,
   });
   const clearFields = () => {
-    setState(prevState => ({
-      ...prevState,
+    setState({
       name: '',
       number: '',
       gender: 'unknown',
       adult: false,
-    }));
+    });
   };
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
@@ -114,4 +113,7 @@ const ContactForm = ({ catchSubmitInfo }) => {
   );
 };
 
+ContactForm.propTypes = {
+  catchSubmitInfo: PropTypes.func.isRequired,
+};
 export default ContactForm;

@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import s from './Filter.module.css';
 const Filter = props => {
   const { valueFromFilter, catchFilterInfo } = props;
@@ -15,8 +15,8 @@ const Filter = props => {
   );
 };
 
-// Filter.propTypes = {
-//   valueFromFilter: PropTypes.string,
-//   catchFilterInfo: PropTypes.func.isRequired,
-// };
+Filter.propTypes = {
+  valueFromFilter: PropTypes.string,
+  catchFilterInfo: PropTypes.func.isRequired,
+};
 export default Filter;
